@@ -1,0 +1,228 @@
+/*
+ * K-Heritage & Horizons Travel - Core Stylesheet
+ * Korean Inbound & Domestic Specialized Travel Agency
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-navy: #0f1e36;
+  --primary-deep: #0a1128;
+  --accent-gold: #d4a373;
+  --accent-gold-hover: #b08968;
+  --accent-crimson: #c84b31;
+  --accent-jade: #2d6a4f;
+  --bg-sand: #fefae0;
+  --bg-light: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --font-serif: 'Playfair Display', 'Noto Serif KR', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: #fafaf9;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(15, 30, 54, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-nav.scrolled {
+  background: rgba(10, 17, 40, 0.98);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section Gradients & Effects */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(10, 17, 40, 0.45) 0%, rgba(10, 17, 40, 0.85) 100%);
+}
+
+.korean-motif-pattern {
+  background-image: radial-gradient(#d4a373 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.12;
+}
+
+/* Tour Card Styling */
+.tour-card {
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+.tour-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px -10px rgba(15, 30, 54, 0.18);
+}
+
+.tour-card .img-zoom {
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tour-card:hover .img-zoom {
+  transform: scale(1.08);
+}
+
+/* Custom Badges */
+.badge-bestseller {
+  background: linear-gradient(135deg, #c84b31 0%, #e63946 100%);
+  color: white;
+}
+
+.badge-unesco {
+  background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+  color: white;
+}
+
+.badge-luxury {
+  background: linear-gradient(135deg, #936639 0%, #d4a373 100%);
+  color: white;
+}
+
+.badge-popular {
+  background: linear-gradient(135deg, #6b21a8 0%, #a855f7 100%);
+  color: white;
+}
+
+.badge-gourmet {
+  background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+  color: white;
+}
+
+/* Modal and Drawer Backdrop */
+.modal-backdrop {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Itinerary Timeline */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0.45rem;
+  top: 1.8rem;
+  bottom: -0.5rem;
+  width: 2px;
+  background-color: #e2e8f0;
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background-color: var(--accent-gold);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--accent-gold);
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.05); }
+}
+
+.pulse-badge {
+  animation: pulse-subtle 2.5s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Floating Actions */
+.floating-btn {
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Active tab style */
+.category-tab.active {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  border-color: var(--primary-navy);
+  box-shadow: 0 4px 12px rgba(15, 30, 54, 0.2);
+}
+
+/* Trust seals */
+.trust-seal {
+  transition: all 0.25s ease;
+}
+.trust-seal:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+/* 6-Digit Verification Inputs */
+.digit-input {
+  width: 2.75rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 0.75rem;
+  border: 2px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
+  transition: all 0.2s ease;
+}
+
+.digit-input:focus {
+  outline: none;
+  border-color: #d4a373;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.2);
+}
+
+@keyframes shake-anim {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.shake-error {
+  animation: shake-anim 0.4s ease-in-out;
+}

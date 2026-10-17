@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-MUST | 대한민국 인바운드 & 국내 프리미엄 여행 전문 여행사</title>
+  <meta name="description" content="대한민국에서 꼭 경험해야 할 머스트 투어! K-MUST 인바운드 & 국내여행 전문 여행사. 국가공인 다국어 관광통역안내사, 노쇼핑 원칙, VIP 프라이빗 투어." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f1e36',
+              deep: '#0a1128',
+              gold: '#d4a373',
+              goldHover: '#b08968',
+              crimson: '#c84b31',
+              jade: '#2d6a4f',
+              sand: '#fefae0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-200 selection:text-amber-900">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden sm:block">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-amber-300 font-medium">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          문화체육관광부 등록 종합여행업 (제2024-00018호)
+        </span>
+        <span class="text-slate-500">|</span>
+        <span class="flex items-center gap-1 text-slate-300">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i>
+          24시 인바운드 긴급 컨시어지: +82-2-720-8800
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1 text-slate-300">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
+          한국관광공사(KTO) 인증 우수 인바운드 여행사
+        </span>
+        <span class="text-slate-500">|</span>
+        <span class="text-emerald-400 font-semibold">100% No Forced Shopping Guarantee</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN NAVIGATION BAR ================= -->
+  <header id="main-nav" class="glass-nav fixed top-0 sm:top-[33px] left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-600 via-amber-700 to-amber-900 flex items-center justify-center text-white shadow-lg border border-amber-400/30 group-hover:scale-105 transition-transform">
+          <i data-lucide="compass" class="w-6 h-6 text-amber-100"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-black text-xl tracking-tight text-white font-serif">K-MUST</span>
+            <span class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">Inbound</span>
+          </div>
+          <span class="text-[11px] text-slate-300 tracking-wider block font-medium">케이머스트 트래블 · 대한민국 인바운드 & 국내여행</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-200">
+        <a href="#about-section" class="hover:text-amber-300 transition-colors" data-i18n="navAbout">여행사 소개</a>
+        <a href="#tours-section" class="hover:text-amber-300 transition-colors" data-i18n="navTours">추천 여행 상품</a>
+        <a href="#tours-section" class="hover:text-amber-300 transition-colors" data-i18n="navThemes">테마별 여행</a>
+        <a href="#booking-section" class="hover:text-amber-300 transition-colors" data-i18n="navCustom">맞춤·VIP 견적</a>
+        <a href="#guide-section" class="hover:text-amber-300 transition-colors" data-i18n="navGuide">외국인 방한가이드</a>
+        <a href="#reviews-section" class="hover:text-amber-300 transition-colors" data-i18n="navReviews">고객 여행 후기</a>
+      </nav>
+
+      <!-- Right Utility Switchers & CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        
+        <!-- Language Switcher -->
+        <div class="bg-slate-800/80 p-1 rounded-xl border border-slate-700/80 flex items-center text-xs">
+          <button onclick="setLanguage('ko')" data-lang="ko" class="lang-btn px-2.5 py-1 rounded-lg transition-colors font-medium">
+            🇰🇷 KO
+          </button>
+          <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-2.5 py-1 rounded-lg transition-colors font-medium">
+            🇺🇸 EN
+          </button>
+        </div>
+
+        <!-- Currency Switcher -->
+        <div class="bg-slate-800/80 p-1 rounded-xl border border-slate-700/80 flex items-center text-xs">
+          <button onclick="setCurrency('KRW')" data-curr="KRW" class="curr-btn px-2.5 py-1 rounded-lg transition-all font-medium">
+            ₩ KRW
+          </button>
+          <button onclick="setCurrency('USD')" data-curr="USD" class="curr-btn px-2.5 py-1 rounded-lg transition-all font-medium">
+            $ USD
+          </button>
+        </div>
+
+        <!-- Member Auth Area (Sign-up / Login / Profile) -->
+        <div id="auth-desktop-area" class="flex items-center gap-2">
+          <!-- Dynamically filled by updateAuthUI() -->
+        </div>
+
+        <!-- Quick Consultation CTA Button -->
+        <a href="#booking-section" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span data-i18n="btnConsult">실시간 상담 예약</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="lg:hidden p-2 text-slate-200 hover:text-white focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-5 space-y-4 text-sm font-medium text-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <button onclick="setLanguage('ko')" data-lang="ko" class="lang-btn px-3 py-1 rounded-lg text-xs">🇰🇷 KO</button>
+          <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-3 py-1 rounded-lg text-xs">🇺🇸 EN</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="setCurrency('KRW')" data-curr="KRW" class="curr-btn px-3 py-1 rounded-lg text-xs">₩ KRW</button>
+          <button onclick="setCurrency('USD')" data-curr="USD" class="curr-btn px-3 py-1 rounded-lg text-xs">$ USD</button>
+        </div>
+      </div>
+      
+      <!-- Mobile Auth Area -->
+      <div id="auth-mobile-area" class="pb-3 border-b border-slate-800">
+        <!-- Dynamically filled -->
+      </div>
+
+      <a href="#about-section" class="block py-1 hover:text-amber-300" data-i18n="navAbout">여행사 소개</a>
+      <a href="#tours-section" class="block py-1 hover:text-amber-300" data-i18n="navTours">추천 여행 상품</a>
+      <a href="#booking-section" class="block py-1 hover:text-amber-300" data-i18n="navCustom">맞춤·VIP 견적</a>
+      <a href="#guide-section" class="block py-1 hover:text-amber-300" data-i18n="navGuide">외국인 방한가이드</a>
+      <a href="#reviews-section" class="block py-1 hover:text-amber-300" data-i18n="navReviews">고객 여행 후기</a>
+      <a href="#booking-section" class="block text-center py-2.5 bg-amber-500 text-slate-950 font-bold rounded-xl mt-2" data-i18n="btnConsult">실시간 상담 예약</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-28 pb-16 px-4 overflow-hidden bg-slate-950">
+    
+    <!-- Hero Background Image & Overlays -->
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=2000&q=85" 
+        alt="Gyeongbokgung Palace Korea" 
+        class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000"
+      />
+      <div class="hero-gradient absolute inset-0"></div>
+      <div class="korean-motif-pattern absolute inset-0 pointer-events-none"></div>
+    </div>
+
+    <!-- Hero Center Content -->
+    <div class="relative max-w-5xl mx-auto text-center z-10 px-4">
+      
+      <!-- Trust Badge Pill -->
+      <div class="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md border border-amber-400/40 text-amber-300 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6 shadow-xl pulse-badge">
+        <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+        <span data-i18n="heroBadge">한국관광공사(KTO) 인증 우수 인바운드 전문 여행사</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight sm:leading-tight md:leading-tight mb-6 font-serif drop-shadow-lg" data-i18n="heroTitle">
+        당신이 꿈꾸던 대한민국, 가장 깊이 있게 만나다
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto mb-10 leading-relaxed font-light drop-shadow" data-i18n="heroSubtitle">
+        100% 국가공인 다국어 관광통역안내사와 함께하는 프리미엄 소그룹 & 프라이빗 맞춤 여행
+      </p>
+
+      <!-- Instant Search Filter Box -->
+      <div class="bg-white/95 backdrop-blur-xl p-3 sm:p-4 rounded-3xl shadow-2xl border border-white/40 max-w-3xl mx-auto">
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+          
+          <div class="relative flex-1 w-full">
+            <i data-lucide="map-pin" class="w-5 h-5 text-amber-700 absolute left-4 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              id="tour-search-input" 
+              placeholder="가고 싶은 여행지나 테마를 검색하세요 (예: 경복궁, 제주도, DMZ, K-Pop)" 
+              class="w-full pl-12 pr-4 py-3.5 bg-slate-100/80 hover:bg-slate-100 focus:bg-white text-slate-800 text-sm rounded-2xl border-none focus:ring-2 focus:ring-amber-500 transition-all placeholder:text-slate-400 font-medium"
+            />
+          </div>
+
+          <button 
+            id="tour-search-btn" 
+            class="w-full sm:w-auto px-8 py-3.5 bg-slate-950 hover:bg-amber-600 text-white font-bold text-sm rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 shrink-0 group"
+          >
+            <i data-lucide="search" class="w-4 h-4 text-amber-400 group-hover:text-white transition-colors"></i>
+            <span data-i18n="searchBtn">여행 검색</span>
+          </button>
+        </div>
+
+        <!-- Quick Search Tags -->
+        <div class="flex items-center flex-wrap gap-2 mt-3 pt-3 border-t border-slate-200/70 text-xs text-slate-600 px-1">
+          <span class="font-bold text-slate-800 flex items-center gap-1">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-rose-500"></i>
+            인기 검색:
+          </span>
+          <button onclick="quickFilter('경복궁')" class="hover:text-amber-700 bg-slate-100 hover:bg-amber-50 px-2 py-0.5 rounded-md transition-colors">#경복궁 달빛투어</button>
+          <button onclick="quickFilter('DMZ')" class="hover:text-amber-700 bg-slate-100 hover:bg-amber-50 px-2 py-0.5 rounded-md transition-colors">#DMZ 안보투어</button>
+          <button onclick="quickFilter('제주')" class="hover:text-amber-700 bg-slate-100 hover:bg-amber-50 px-2 py-0.5 rounded-md transition-colors">#제주 해녀&요트</button>
+          <button onclick="quickFilter('K-Pop')" class="hover:text-amber-700 bg-slate-100 hover:bg-amber-50 px-2 py-0.5 rounded-md transition-colors">#K-컬처 댄스</button>
+          <button onclick="quickFilter('경주')" class="hover:text-amber-700 bg-slate-100 hover:bg-amber-50 px-2 py-0.5 rounded-md transition-colors">#경주 불국사</button>
+        </div>
+      </div>
+
+      <!-- Quick Trust Indicators / Stats Counters -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto text-left">
+        <div class="bg-slate-900/60 backdrop-blur-md border border-slate-700/60 p-4 rounded-2xl text-white">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-serif mb-1">15,000+</div>
+          <div class="text-xs text-slate-300 font-medium">누적 외국인 방한 여행객 안내</div>
+        </div>
+        <div class="bg-slate-900/60 backdrop-blur-md border border-slate-700/60 p-4 rounded-2xl text-white">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-serif mb-1">4.98 / 5.0</div>
+          <div class="text-xs text-slate-300 font-medium">글로벌 여행 플랫폼 고객 만족도</div>
+        </div>
+        <div class="bg-slate-900/60 backdrop-blur-md border border-slate-700/60 p-4 rounded-2xl text-white">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-serif mb-1">100%</div>
+          <div class="text-xs text-slate-300 font-medium">국가공인 관광통역안내사 동행</div>
+        </div>
+        <div class="bg-slate-900/60 backdrop-blur-md border border-slate-700/60 p-4 rounded-2xl text-white">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-serif mb-1">ZERO</div>
+          <div class="text-xs text-slate-300 font-medium">강제쇼핑 · 강제옵션 완전 배제</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US SECTION ================= -->
+  <section id="about-section" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-100/70 border border-amber-200 px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+        Trust & Excellence
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif mb-4" data-i18n="whyTitle">
+        왜 K-헤리티지 인바운드 투어인가?
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed" data-i18n="whySubtitle">
+        외국인 귀빈 의전부터 가족 맞춤 투어까지, 정직과 감동으로 대한민국을 선물합니다.
+      </p>
+    </div>
+
+    <!-- Differentiator Grid -->
+    <div id="why-us-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <!-- Injected dynamically by app.js -->
+    </div>
+
+    <!-- Official Licensing & Trust Strip -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0">
+          <i data-lucide="shield-check" class="w-7 h-7"></i>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold text-white mb-1">정부 공인 종합여행업 인허가 및 안심 보증</h4>
+          <p class="text-slate-300 text-xs sm:text-sm">문화체육관광부 일반여행업 정식 등록 · 한국관광협회중앙회(KATA) 정회원 · 여행자 배상책임보험 5억원 가입 완료</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="bg-slate-800/80 px-3.5 py-2 rounded-xl text-xs font-semibold text-amber-300 border border-slate-700">KTO 우수여행사</span>
+        <span class="bg-slate-800/80 px-3.5 py-2 rounded-xl text-xs font-semibold text-emerald-300 border border-slate-700">안심안전 인증</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOUR PACKAGES SECTION ================= -->
+  <section id="tours-section" class="py-20 px-4 bg-slate-100 border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-100/70 border border-amber-200 px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+            Handcrafted Journeys
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif mb-2" data-i18n="toursHeading">
+            대한민국 대표 프리미엄 투어 컬렉션
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base" data-i18n="toursSubheading">
+            외국인 여행자가 가장 사랑하는 베스트셀러부터 깊이 있는 로컬 헤리티지까지
+          </p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <button class="category-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 bg-white whitespace-nowrap transition-all" data-category="all" data-i18n="tabAll">전체 상품</button>
+          <button class="category-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 bg-white whitespace-nowrap transition-all" data-category="culture" data-i18n="tabCulture">궁궐 & 전통역사</button>
+          <button class="category-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 bg-white whitespace-nowrap transition-all" data-category="kwave" data-i18n="tabKwave">K-컬처 & K-Pop</button>
+          <button class="category-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 bg-white whitespace-nowrap transition-all" data-category="unesco" data-i18n="tabUnesco">유네스코 세계유산</button>
+          <button class="category-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 bg-white whitespace-nowrap transition-all" data-category="nature" data-i18n="tabNature">제주 & 청정자연</button>
+          <button class="category-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 bg-white whitespace-nowrap transition-all" data-category="gourmet" data-i18n="tabGourmet">로컬 미식 & 시장</button>
+        </div>
+      </div>
+
+      <!-- Tours Grid -->
+      <div id="tours-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Dynamically populated by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE BOOKING & CUSTOM QUOTE CALCULATOR ================= -->
+  <section id="booking-section" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid lg:grid-cols-12">
+      
+      <!-- Left Info Column -->
+      <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 sm:p-12 text-white flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 bg-amber-500/20 border border-amber-400/30 px-3 py-1 rounded-full uppercase tracking-wider mb-6">
+            Bespoke Reservation
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold font-serif mb-4 leading-snug" data-i18n="customTitle">
+            나만의 맞춤형 프라이빗 투어 견적 문의
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed mb-8" data-i18n="customSub">
+            가족 여행, 비즈니스 인센티브, VIP 의전 투어 등 일정과 인원에 맞춘 1:1 맞춤 일정을 무료로 설계해 드립니다.
+          </p>
+
+          <!-- Key Guarantees -->
+          <div class="space-y-4 text-xs sm:text-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-slate-200">2시간 이내 전담 여행 플래너 1:1 빠른 회신 보장</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-slate-200">영어, 일본어, 중국어, 스페인어 전문 관광통역안내사 배정</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-slate-200">호텔 픽업 & 샌딩, VIP 리무진 차량 풀서비스</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-slate-200">식단 맞춤 (할랄, 비건, 글루텐프리 등) 세심한 배려</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Instant Contact Links -->
+        <div class="pt-8 mt-8 border-t border-slate-800">
+          <div class="text-xs text-slate-400 mb-2">빠른 즉시 다이렉트 상담 채널:</div>
+          <div class="flex items-center gap-3">
+            <a href="https://wa.me/821088001234" target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1.5 transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              WhatsApp 상담
+            </a>
+            <a href="mailto:contact@k-must.com" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs flex items-center gap-1.5 transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              이메일 견적요청
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Column: Interactive Calculator -->
+      <div class="lg:col-span-7 p-8 sm:p-12">
+        <form id="booking-form" class="space-y-6">
+          
+          <!-- Select Tour Package -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2" data-i18n="calcTourLabel">
+              선택 투어 상품 *
+            </label>
+            <select id="calc-tour" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+
+          <!-- Date & Guide Language Row -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2" data-i18n="calcDateLabel">
+                희망 출발일 *
+              </label>
+              <input type="date" id="calc-date" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2" data-i18n="calcLangLabel">
+                가이드 희망 언어 *
+              </label>
+              <select id="calc-lang" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium">
+                <option value="en">English (영어 전문 가이드)</option>
+                <option value="ko">한국어 (국내 VIP 가이드)</option>
+                <option value="ja">日本語 (일본어 가이드)</option>
+                <option value="zh">中文 (중국어 가이드)</option>
+                <option value="es">Español (스페인어 가이드)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Number of Travelers -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2" data-i18n="calcAdultsLabel">
+                성인 인원수 (만 12세 이상) *
+              </label>
+              <div class="relative">
+                <input type="number" id="calc-adults" min="1" max="50" value="2" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-bold" />
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-400 font-medium">명</span>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2" data-i18n="calcChildLabel">
+                아동 인원수 (30% 할인)
+              </label>
+              <div class="relative">
+                <input type="number" id="calc-children" min="0" max="20" value="0" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-bold" />
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-400 font-medium">명</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Airport Pickup Add-on Option -->
+          <div class="bg-amber-50/70 p-4 rounded-2xl border border-amber-200/80 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="calc-pickup" class="w-5 h-5 rounded text-amber-600 focus:ring-amber-500 border-slate-300" />
+              <div>
+                <label for="calc-pickup" class="text-xs sm:text-sm font-bold text-slate-900 cursor-pointer" data-i18n="calcPickupLabel">
+                  인천/김포공항 전용 픽업 서비스 (+₩90,000 / $70)
+                </label>
+                <p class="text-xs text-slate-500">항공편 도착 시간에 맞춘 입국장 웰컴 피켓 네임 영접 및 전용 차량 탑승</p>
+              </div>
+            </div>
+            <i data-lucide="plane" class="w-6 h-6 text-amber-700 shrink-0 hidden sm:block"></i>
+          </div>
+
+          <!-- Contact Inputs -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">예약자 성함 (Full Name) *</label>
+              <input type="text" id="calc-name" required placeholder="홍길동 / David Kim" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">이메일 주소 (Email) *</label>
+              <input type="email" id="calc-email" required placeholder="traveler@example.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all" />
+            </div>
+          </div>
+
+          <!-- WhatsApp or Kakao ID & Notes -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">메신저 ID (WhatsApp / KakaoTalk)</label>
+              <input type="text" id="calc-messenger" placeholder="+1 234 567 8900 또는 카톡아이디" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">특별 요청사항 (식단, 휠체어 등)</label>
+              <input type="text" id="calc-notes" placeholder="할랄 식단 희망, 호텔 미팅 등" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all" />
+            </div>
+          </div>
+
+          <!-- Live Estimated Price Box -->
+          <div class="p-5 bg-slate-900 rounded-2xl text-white flex items-center justify-between">
+            <div>
+              <span class="text-xs text-amber-300 font-semibold" data-i18n="calcEstimatedTotal">실시간 예상 견적 금액</span>
+              <p class="text-xs text-slate-400 mt-0.5">최종 일정 확정 전 사전 예상 금액입니다</p>
+            </div>
+            <div id="calc-total" class="text-2xl sm:text-3xl font-black font-serif text-amber-400">
+              ₩0
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-4 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-base rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 group">
+            <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            <span data-i18n="btnSubmitBooking">예약 및 견적 요청서 전송</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INBOUND TRAVEL ESSENTIAL GUIDE ================= -->
+  <section id="guide-section" class="py-20 px-4 bg-slate-100 border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-100/70 border border-amber-200 px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+          Traveler Companion
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif mb-4" data-i18n="guideTitle">
+          외국인 여행자를 위한 대한민국 입국 & 여행 꿀팁
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed" data-i18n="guideSub">
+          안전하고 편리한 한국 여행을 위해 사전에 꼭 알아두어야 할 필수 정보입니다.
+        </p>
+      </div>
+
+      <div id="guide-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL TRAVELER REVIEWS ================= -->
+  <section id="reviews-section" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-100/70 border border-amber-200 px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+        Guest Testimonials
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif mb-4" data-i18n="reviewsTitle">
+        전 세계 여행자가 증명하는 감동 후기
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed" data-i18n="reviewsSub">
+        트립어드바이저 평점 4.98 / 5.0 만족도 1위의 품격을 경험하세요.
+      </p>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div id="reviews-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Injected dynamically by app.js -->
+    </div>
+  </section>
+
+  <!-- ================= CORPORATE & MICE INCENTIVE BANNER ================= -->
+  <section class="py-12 px-4 max-w-7xl mx-auto">
+    <div class="relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="relative z-10 max-w-2xl">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Corporate MICE & Delegation</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold font-serif mb-3">
+          기업 인센티브 단체 투어 · 해외 VIP 의전 전문 서비스
+        </h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          글로벌 다국적 기업 임직원 한국 워크샵, 대학 및 학술 단체 연수, 국빈급 VIP 의전 수송까지 12년 경력의 수석 MICE 전문 코디네이터가 완벽한 행사를 기획합니다.
+        </p>
+      </div>
+      <div class="relative z-10 shrink-0">
+        <a href="#booking-section" class="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-2xl text-sm shadow-xl transition-all inline-flex items-center gap-2">
+          <i data-lucide="briefcase" class="w-4 h-4"></i>
+          기업·MICE 단체 견적 문의
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Footer Top Brand & Links -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-600 flex items-center justify-center text-white font-bold">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-white text-lg font-bold font-serif tracking-tight">K-MUST TRAVEL</span>
+              <span class="text-slate-400 text-xs block">(주)케이머스트 트래블</span>
+            </div>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-md">
+            대한민국 문화체육관광부 등록 종합여행업 여행사로, 전 세계 여행자에게 한국의 머스트 비짓(Must-Visit) 명소와 K-컬처의 진정한 매력을 전하는 인바운드 전문 여행 기업입니다.
+          </p>
+          <div class="flex items-center gap-3 text-slate-300">
+            <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-amber-400"></i> 노쇼핑 100% 보장</span>
+            <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-amber-400"></i> 국가공인 가이드 100%</span>
+            <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-amber-400"></i> 안심 여행자보험</span>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">주요 여행 테마</h5>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#tours-section" class="hover:text-amber-400 transition-colors">서울 궁궐 & 한옥 다도 투어</a></li>
+            <li><a href="#tours-section" class="hover:text-amber-400 transition-colors">DMZ 평화 & 비무장지대 탐방</a></li>
+            <li><a href="#tours-section" class="hover:text-amber-400 transition-colors">K-Pop & 성수동 K-컬처 투어</a></li>
+            <li><a href="#tours-section" class="hover:text-amber-400 transition-colors">경주·안동 유네스코 세계유산</a></li>
+            <li><a href="#tours-section" class="hover:text-amber-400 transition-colors">제주도 에메랄드 VIP 요트 투어</a></li>
+            <li><a href="#tours-section" class="hover:text-amber-400 transition-colors">부산 해안열차 & 자갈치 미식</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">외국인 고객 지원</h5>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#guide-section" class="hover:text-amber-400 transition-colors">K-ETA 비자 신청 안내</a></li>
+            <li><a href="#guide-section" class="hover:text-amber-400 transition-colors">티머니 교통카드 이용 가이드</a></li>
+            <li><a href="#guide-section" class="hover:text-amber-400 transition-colors">사계절 방한 옷차림 & 기후</a></li>
+            <li><a href="#guide-section" class="hover:text-amber-400 transition-colors">한국관광통역안내 1330 연결</a></li>
+            <li><a href="#booking-section" class="hover:text-amber-400 transition-colors">공항 VIP 픽업 서비스 신청</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal Company Information -->
+      <div class="pt-8 space-y-2 text-slate-500 leading-relaxed">
+        <p data-i18n="footerCompany">(주)케이머스트 트래블 | 대표이사: 손태완</p>
+        <p data-i18n="footerLicense">관광사업자 등록번호: 제2024-00018호 (종합여행업) | 사업자등록번호: 104-86-12345 | 통신판매업신고: 2024-서울중구-0982호</p>
+        <p data-i18n="footerAddress">서울특별시 중구 세종대로 110 코리아투어빌딩 7층 | 전화: +82-2-720-8800 | 팩스: +82-2-720-8801</p>
+        <p data-i18n="footerEmail">이메일: contact@k-must.com | 카카오톡 채널: @케이머스트 | WhatsApp: +82-10-8800-1234</p>
+        <p class="pt-4 text-slate-600" data-i18n="footerRights">
+          © 2026 K-MUST Travel. All rights reserved. 대한민국 문화체육관광부·한국관광공사 등록 인증 여행사
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING ACTION BUTTONS ================= -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+    
+    <!-- WhatsApp Floating Button (For Foreign Inbound Guests) -->
+    <a 
+      href="https://wa.me/821088001234?text=Hello%20K-MUST%20Travel!%20I%20am%20interested%20in%20a%20tour%20in%20Korea." 
+      target="_blank" 
+      class="floating-btn flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full text-xs font-bold transition-all"
+      title="Chat on WhatsApp"
+    >
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="hidden sm:inline">WhatsApp Inbound Chat</span>
+    </a>
+
+    <!-- KakaoTalk Floating Button (For Domestic & Korean Speakers) -->
+    <a 
+      href="#booking-section" 
+      class="floating-btn flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-slate-900 px-4 py-3 rounded-full text-xs font-bold transition-all shadow-lg"
+      title="실시간 상담 문의"
+    >
+      <i data-lucide="messages-square" class="w-5 h-5"></i>
+      <span>카카오톡 1:1 상담</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button 
+      id="scroll-top-btn" 
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+      class="w-10 h-10 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center shadow-lg transition-all opacity-0 pointer-events-none"
+      title="Top of Page"
+    >
+      <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+  </div>
+
+  <!-- ================= TOUR DETAIL MODAL ================= -->
+  <div id="tour-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col relative border border-slate-200">
+      <div id="tour-modal-content">
+        <!-- Dynamically filled by openTourModal() in app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BOOKING SUCCESS MODAL ================= -->
+  <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 text-center relative border border-slate-200">
+      <div id="success-modal-content">
+        <!-- Dynamically filled by handleBookingSubmit() in app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MEMBER AUTH & EMAIL VERIFICATION MODAL ================= -->
+  <div id="auth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col relative border border-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="px-6 pt-6 pb-4 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-600 flex items-center justify-center text-white font-bold text-xs">
+            KM
+          </div>
+          <div>
+            <h3 id="auth-modal-title" class="font-bold text-base text-white">K-MUST 회원 서비스</h3>
+            <p id="auth-modal-desc" class="text-xs text-slate-300">이메일 계정으로 안전하게 가입하고 혜택을 받으세요</p>
+          </div>
+        </div>
+        <button onclick="closeAuthModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Tabs: 회원가입 / 로그인 -->
+      <div id="auth-tabs" class="grid grid-cols-2 border-b border-slate-200 text-sm font-semibold">
+        <button id="tab-signup-btn" onclick="switchAuthTab('signup')" class="py-3 text-center border-b-2 border-amber-600 text-amber-800 bg-amber-50/50 transition-colors">
+          신규 회원가입
+        </button>
+        <button id="tab-login-btn" onclick="switchAuthTab('login')" class="py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-colors">
+          기존 회원 로그인
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6">
+        
+        <!-- ================= VIEW 1: SIGN-UP FORM ================= -->
+        <div id="auth-view-signup" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">고객 성함 (Full Name) *</label>
+            <input type="text" id="reg-name" placeholder="홍길동 / John Smith" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">이메일 계정 (Email Address) *</label>
+            <div class="relative">
+              <input type="email" id="reg-email" placeholder="traveler@example.com" required class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium" />
+              <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2"></i>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">※ 본 이메일로 6자리 디지털 보안 인증코드가 즉시 전송됩니다.</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">비밀번호 *</label>
+              <input type="password" id="reg-password" placeholder="6자리 이상" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">선호 언어/국적</label>
+              <select id="reg-country" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 font-medium">
+                <option value="ko">대한민국 (Korean)</option>
+                <option value="en">English (외국인 방한)</option>
+                <option value="ja">日本語 (일본)</option>
+                <option value="zh">中文 (중국/대만/홍콩)</option>
+                <option value="other">Other Countries</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2 pt-1">
+            <input type="checkbox" id="reg-terms" checked class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-slate-300 mt-0.5" />
+            <label for="reg-terms" class="text-xs text-slate-600 leading-tight">
+              [필수] <span class="text-amber-800 underline">이용약관</span> 및 <span class="text-amber-800 underline">개인정보 수집·이용</span>에 동의합니다.
+            </label>
+          </div>
+
+          <!-- Error Message Banner -->
+          <div id="reg-error-msg" class="hidden text-xs text-rose-600 bg-rose-50 border border-rose-200 p-2.5 rounded-xl font-medium"></div>
+
+          <button onclick="handleRequestVerificationCode()" id="btn-send-code" class="w-full py-3.5 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>인증코드 6자리 발송 및 확인하기</span>
+          </button>
+        </div>
+
+        <!-- ================= VIEW 2: 6-DIGIT CODE VERIFICATION ================= -->
+        <div id="auth-view-verify" class="hidden space-y-5 text-center">
+          
+          <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto shadow-inner">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-slate-900 font-serif">이메일 인증코드 입력</h4>
+            <p class="text-xs text-slate-600 mt-1">
+              <span id="verify-target-email" class="font-bold text-amber-800"></span> 으로<br>
+              랜덤 보안 인증코드 6자리가 발송되었습니다.
+            </p>
+          </div>
+
+          <!-- Simulated Incoming Email Toast (Realistic Demo Simulation) -->
+          <div class="bg-amber-50 border border-amber-300 p-3.5 rounded-2xl text-left shadow-sm flex items-start gap-3">
+            <div class="p-2 rounded-lg bg-amber-200/80 text-amber-900 shrink-0">
+              <i data-lucide="mail-check" class="w-5 h-5"></i>
+            </div>
+            <div class="flex-1 text-xs">
+              <div class="flex items-center justify-between font-bold text-amber-950 mb-0.5">
+                <span>[K-MUST 보안 인증센터] 메일 수신</span>
+                <span class="text-[10px] bg-amber-200 px-1.5 py-0.5 rounded text-amber-900 font-bold">방금 전</span>
+              </div>
+              <p class="text-amber-900 mb-1">인증코드 6자리: <strong id="simulated-code-display" class="text-base text-amber-800 tracking-widest font-mono font-black select-all"></strong></p>
+              <button onclick="autoFillCode()" class="text-[11px] text-amber-800 font-bold underline hover:text-amber-900">
+                👉 클릭 시 6자리 인증번호 자동 입력
+              </button>
+            </div>
+          </div>
+
+          <!-- 6 Square Input Boxes -->
+          <div>
+            <div id="digit-boxes" class="flex justify-center items-center gap-2 py-2">
+              <input type="text" maxlength="1" class="digit-input" id="digit-1" oninput="onDigitInput(1, event)" onkeydown="onDigitKey(1, event)" autocomplete="off" />
+              <input type="text" maxlength="1" class="digit-input" id="digit-2" oninput="onDigitInput(2, event)" onkeydown="onDigitKey(2, event)" autocomplete="off" />
+              <input type="text" maxlength="1" class="digit-input" id="digit-3" oninput="onDigitInput(3, event)" onkeydown="onDigitKey(3, event)" autocomplete="off" />
+              <span class="text-slate-400 font-bold text-lg">-</span>
+              <input type="text" maxlength="1" class="digit-input" id="digit-4" oninput="onDigitInput(4, event)" onkeydown="onDigitKey(4, event)" autocomplete="off" />
+              <input type="text" maxlength="1" class="digit-input" id="digit-5" oninput="onDigitInput(5, event)" onkeydown="onDigitKey(5, event)" autocomplete="off" />
+              <input type="text" maxlength="1" class="digit-input" id="digit-6" oninput="onDigitInput(6, event)" onkeydown="onDigitKey(6, event)" autocomplete="off" />
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">숫자 6자리를 차례대로 입력해 주세요.</p>
+          </div>
+
+          <!-- Timer and Resend Area -->
+          <div class="flex items-center justify-between text-xs px-2">
+            <span class="text-slate-500 flex items-center gap-1">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-600"></i>
+              남은 유효시간: <strong id="verify-timer" class="text-rose-600 font-mono text-sm">03:00</strong>
+            </span>
+            <button onclick="handleResendCode()" class="text-slate-600 hover:text-amber-800 font-semibold underline">
+              인증번호 재전송
+            </button>
+          </div>
+
+          <div id="verify-error-msg" class="hidden text-xs text-rose-600 bg-rose-50 border border-rose-200 p-2.5 rounded-xl text-center font-medium"></div>
+
+          <!-- Confirm Verification Button -->
+          <div class="pt-2 flex gap-2">
+            <button onclick="backToSignupForm()" class="w-1/3 py-3 border border-slate-300 text-slate-700 font-semibold text-xs rounded-xl hover:bg-slate-50 transition-colors">
+              이전 단계
+            </button>
+            <button onclick="handleVerifyCodeSubmit()" class="w-2/3 py-3 bg-slate-950 hover:bg-amber-600 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>인증 확인 및 가입 완료</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- ================= VIEW 3: SIGN-UP COMPLETE CELEBRATION ================= -->
+        <div id="auth-view-success" class="hidden text-center space-y-4 py-4">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
+            <i data-lucide="check" class="w-10 h-10"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-slate-900 font-serif">회원가입이 완료되었습니다!</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <strong id="success-user-name" class="text-slate-900"></strong>님, K-MUST의 정회원이 되신 것을 진심으로 환영합니다.<br>
+            가입 축하 <strong>10% 투어 할인 쿠폰</strong>이 회원 계정에 자동 발급되었습니다.
+          </p>
+          <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs text-amber-900 font-medium">
+            🎟️ 신규 회원 웰컴 쿠폰: <strong>WELCOME-KMUST-10</strong> (투어 예약 시 10% 자동 할인)
+          </div>
+          <button onclick="closeAuthModal()" class="w-full py-3.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl shadow-md transition-colors">
+            K-MUST 여행 둘러보기
+          </button>
+        </div>
+
+        <!-- ================= VIEW 4: LOGIN FORM ================= -->
+        <div id="auth-view-login" class="hidden space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">이메일 주소</label>
+            <input type="email" id="login-email" placeholder="traveler@example.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">비밀번호</label>
+            <input type="password" id="login-password" placeholder="비밀번호 입력" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-medium" />
+          </div>
+          <div id="login-error-msg" class="hidden text-xs text-rose-600 bg-rose-50 border border-rose-200 p-2.5 rounded-xl font-medium"></div>
+          <button onclick="handleLoginSubmit()" class="w-full py-3.5 bg-slate-900 hover:bg-amber-600 text-white font-bold text-sm rounded-xl shadow-md transition-colors flex items-center justify-center gap-1.5">
+            <i data-lucide="log-in" class="w-4 h-4"></i>
+            <span>로그인</span>
+          </button>
+          <div class="text-center pt-2 text-xs text-slate-500">
+            아직 계정이 없으신가요? 
+            <button onclick="switchAuthTab('signup')" class="text-amber-800 font-bold underline ml-1">이메일로 회원가입</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Helper Quick Filter Function -->
+  <script>
+    function quickFilter(keyword) {
+      const input = document.getElementById('tour-search-input');
+      if (input) {
+        input.value = keyword;
+        AppState.searchQuery = keyword;
+        renderTours();
+        document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+  <!-- Application Scripts -->
+  <script src="js/tours-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
